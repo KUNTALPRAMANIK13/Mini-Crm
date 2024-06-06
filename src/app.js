@@ -10,10 +10,13 @@ app.use(express.json({ limit: "100kb" }));
 
 app.use(express.urlencoded({ extended: true, limit: "100kb" }));
 
-
 // routes import
-// import UserRouter from "./routes/user.routes.js";
-// app.use("/api/v1/users", UserRouter);
+import customer from "./routes/user.routes.js";
+import order from "./routes/order.routes.js";
 
-// http://localhost:8000/api/v1/users/register
+app.use("/api/users", customer);
+app.use("/api/v1/orders", order);
+
+// http://localhost:8000/api/v1/users
+// http://localhost:8000/api/v1/orders/order
 export { app };

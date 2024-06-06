@@ -16,14 +16,14 @@ const customerSchema = new mongoose.Schema({
     },
     totalSpends:{
         type: Number,
-        required: true,
     },
     visits:{
         type: Number,
-        required: true,
+        
     },
     lastVisitedAt:{
         type: Date,
-        required: true,
     },
 });
+
+export const Customer = mongoose.model("Customer", customerSchema);
